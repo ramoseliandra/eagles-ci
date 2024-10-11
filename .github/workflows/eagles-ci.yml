@@ -26,7 +26,7 @@ jobs:
       steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Copiando os arquivos para maquina virtual
-        uses: actions/uplod-checkout@v4
+        uses: actions/checkout@v4
  
       # Runs a set of commands using the runners shell
       - name: Etapa 01 - Verificação versão do Node e Newman
@@ -49,33 +49,3 @@ jobs:
         with:
           name: report
           path: ./result/
-  deploy:
-    name: Deploy GitHub Pages 🌐
-    runs-on: ubuntu-latest
-    if: always()
-    needs: 
-      - test
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: https://github.com/ramoseliandra/eagles-ci.git
-    steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
- 
-      - name: Download Artifacts
-        uses: actions/download-artifact@v4
-        with: 
-          name: report
- 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./
- 
-      - name: Deploy to Github Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
