@@ -1,0 +1,15 @@
+{
+	"id": "dcbdc94c-e184-463a-8acb-a0c24567c8a9",
+	"values": [
+		{
+			"key": "msgdelete",
+			"value": "Usuário deletado com sucesso!.",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2024-10-11T17:52:16.105Z",
+	"_postman_exported_using": "Postman/11.16.1"
+}
